@@ -4,7 +4,7 @@ Interface React com TypeScript para gestão de barbearias. Este repositório é 
 
 ## Estado atual
 
-Estrutura inicial com Vite, navegação e layout responsivo. A visão geral apresenta atalhos; clientes, profissionais, atendimentos, despesas e balanço têm páginas de preparação. Login, formulários e consultas à API serão implementados nas próximas etapas. Não há dados de clientes ou valores financeiros de demonstração nesta interface.
+Estrutura inicial com Vite, navegação e layout responsivo. A visão geral apresenta atalhos; clientes, profissionais, atendimentos, despesas e balanço têm páginas de preparação. Login, validação da sessão e logout já estão integrados à API; as áreas internas exigem autenticação. Os formulários e consultas dos módulos de negócio serão implementados nas próximas etapas. Não há dados de clientes ou valores financeiros de demonstração nesta interface.
 
 ## Executar no WSL
 
@@ -26,7 +26,9 @@ src/
 ├── app/             # Rotas, navegação e layout da aplicação
 ├── components/      # Componentes compartilhados
 ├── config/          # Configuração pública, como a URL da API
+├── lib/             # Cliente HTTP compartilhado
 ├── modules/
+│   ├── auth/        # Login, sessão e proteção de rotas
 │   └── home/        # Visão geral
 ├── styles/          # Estilos globais e responsividade
 └── main.tsx         # Inicialização do React
@@ -42,7 +44,7 @@ A única variável prevista é:
 VITE_API_URL=http://localhost:3100
 ```
 
-Ela é lida em `src/config/environment.ts`. No deploy, será substituída pela URL HTTPS pública da API no Render. Nenhuma chamada à API está implementada neste bloco. A autorização de CORS do backend será configurada na integração do login.
+Ela é lida em `src/config/environment.ts`. No deploy, será substituída pela URL HTTPS pública da API no Render. As chamadas de autenticação já estão integradas. O backend permite a origem configurada por `FRONTEND_URL`, com padrão `http://localhost:5173`. Veja [Login e sessão](docs/autenticacao.md) para executar e conferir o fluxo.
 
 **Todo código, arquivo estático e variável `VITE_*` usado no build pode ser lido pelo visitante.** O `.env` não é um local seguro para segredos de frontend, mesmo ignorado pelo Git. Nunca adicione credenciais do banco, senhas, tokens reais ou arquivos `.env` ao repositório. Segredos ficam no backend; tokens de sessão serão obtidos durante o login, não incluídos no build.
 
