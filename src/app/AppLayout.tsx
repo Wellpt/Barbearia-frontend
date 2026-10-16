@@ -1,5 +1,6 @@
 import { NavLink, Outlet, useLocation } from "react-router-dom";
 import { navigation } from "./navigation";
+import { SessionControls } from "../modules/auth/SessionControls";
 
 export function AppLayout() {
   const { pathname } = useLocation();
@@ -52,7 +53,7 @@ export function AppLayout() {
       <div className="workspace">
         <header className="topbar">
           <span>PAINEL DE GESTÃO</span>
-          <span className="version-tag">Versão inicial</span>
+          <SessionControls />
         </header>
         <main id="main-content" tabIndex={-1}>
           <div className="page-heading">

@@ -62,8 +62,8 @@ export function HomePage() {
       <section className="release-note" aria-label="Estado desta versão">
         <span className="status-dot" aria-hidden="true" />
         <p>
-          <strong>A base está pronta.</strong> As telas de login e operação
-          serão conectadas à API nas próximas etapas.
+          <strong>A base está pronta.</strong> O login já está conectado. As
+          telas de operação serão implementadas nas próximas etapas.
         </p>
       </section>
     </>
