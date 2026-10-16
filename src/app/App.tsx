@@ -5,6 +5,7 @@ import { HomePage } from "../modules/home/HomePage";
 import { ModulePage } from "../components/ModulePage";
 import { LoginPage } from "../modules/auth/LoginPage";
 import { RequireAuth } from "../modules/auth/RequireAuth";
+import { CustomersPage } from "../modules/customers/CustomersPage";
 
 export function App() {
   return (
@@ -13,13 +14,17 @@ export function App() {
       <Route element={<RequireAuth />}>
         <Route element={<AppLayout />}>
           <Route index element={<HomePage />} />
-          {navigation.slice(1).map((item) => (
-            <Route
-              key={item.path}
-              path={item.path}
-              element={<ModulePage title={item.label} />}
-            />
-          ))}
+          <Route path="/clientes" element={<CustomersPage />} />
+          {navigation
+            .slice(1)
+            .filter((item) => item.path !== "/clientes")
+            .map((item) => (
+              <Route
+                key={item.path}
+                path={item.path}
+                element={<ModulePage title={item.label} />}
+              />
+            ))}
           <Route
             path="*"
             element={
