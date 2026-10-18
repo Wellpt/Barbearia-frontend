@@ -4,7 +4,7 @@ Interface React com TypeScript para gestão de barbearias. Este repositório é 
 
 ## Estado atual
 
-Estrutura inicial com Vite, navegação e layout responsivo. A visão geral apresenta atalhos; atendimentos, despesas e balanço têm páginas de preparação. A tela de profissionais permite cadastrar, listar, ativar e desativar profissionais. A tela de clientes já permite listar, cadastrar e editar nome, telefone e CPF. Login, validação da sessão e logout já estão integrados à API; as áreas internas exigem autenticação. Os demais módulos de negócio serão implementados nas próximas etapas. Veja [Clientes na interface](docs/clientes.md) e [Profissionais na interface](docs/profissionais.md). Não há dados de clientes ou valores financeiros de demonstração nesta interface.
+Estrutura inicial com Vite, navegação e layout responsivo. A visão geral apresenta atalhos; despesas e balanço têm páginas de preparação. A tela de atendimentos já registra cortes com cliente, serviço, profissional, valor e pagamento. A tela de profissionais permite cadastrar, listar, ativar e desativar profissionais. A tela de clientes já permite listar, cadastrar e editar nome, telefone e CPF. Login, validação da sessão e logout já estão integrados à API; as áreas internas exigem autenticação. Os demais módulos de negócio serão implementados nas próximas etapas. Veja [Clientes na interface](docs/clientes.md) , [Profissionais na interface](docs/profissionais.md) e [Lançamento de atendimentos](docs/atendimentos.md). Não há dados de clientes ou valores financeiros de demonstração nesta interface.
 
 ## Executar no WSL
 
@@ -31,6 +31,7 @@ src/
 │   ├── auth/        # Login, sessão e proteção de rotas
 │   ├── customers/   # Listagem, cadastro e edição de clientes
 │   ├── professionals/ # Cadastro e situação dos profissionais
+│   ├── attendances/ # Lançamento de cortes e confirmação
 │   └── home/        # Visão geral
 ├── styles/          # Estilos globais e responsividade
 └── main.tsx         # Inicialização do React
