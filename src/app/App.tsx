@@ -7,6 +7,7 @@ import { LoginPage } from "../modules/auth/LoginPage";
 import { RequireAuth } from "../modules/auth/RequireAuth";
 import { CustomersPage } from "../modules/customers/CustomersPage";
 import { ProfessionalsPage } from "../modules/professionals/ProfessionalsPage";
+import { AttendancesPage } from "../modules/attendances/AttendancesPage";
 
 export function App() {
   return (
@@ -17,10 +18,11 @@ export function App() {
           <Route index element={<HomePage />} />
           <Route path="/clientes" element={<CustomersPage />} />
           <Route path="/profissionais" element={<ProfessionalsPage />} />
+          <Route path="/atendimentos" element={<AttendancesPage />} />
           {navigation
             .slice(1)
             .filter(
-              (item) => !["/clientes", "/profissionais"].includes(item.path),
+              (item) => !["/clientes", "/profissionais", "/atendimentos"].includes(item.path),
             )
             .map((item) => (
               <Route

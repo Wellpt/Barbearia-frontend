@@ -59,11 +59,10 @@ export function HomePage() {
           </Link>
         ))}
       </div>
-      <section className="release-note" aria-label="Estado desta versão">
+      <section className="release-note" aria-label="Dica de uso">
         <span className="status-dot" aria-hidden="true" />
         <p>
-          <strong>A base está pronta.</strong> O login já está conectado. As
-          telas de operação serão implementadas nas próximas etapas.
+          <strong>Dica para sua rotina.</strong> Cadastre o cliente e selecione o profissional responsável antes de lançar cada corte.
         </p>
       </section>
     </>

@@ -24,7 +24,8 @@ a {
   text-decoration: none;
 }
 button,
-input {
+input,
+select {
   font: inherit;
 }
 h1,
@@ -467,7 +468,8 @@ footer {
   font-weight: 600;
 }
 
-.form-field input {
+.form-field input,
+.form-field select {
   width: 100%;
   height: 50px;
   min-width: 0;
@@ -479,7 +481,8 @@ footer {
   color: #25312d;
 }
 
-.form-field input:focus {
+.form-field input:focus,
+.form-field select:focus {
   outline: 2px solid #658259;
   outline-offset: 2px;
 }
