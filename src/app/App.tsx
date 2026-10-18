@@ -6,6 +6,7 @@ import { ModulePage } from "../components/ModulePage";
 import { LoginPage } from "../modules/auth/LoginPage";
 import { RequireAuth } from "../modules/auth/RequireAuth";
 import { CustomersPage } from "../modules/customers/CustomersPage";
+import { ProfessionalsPage } from "../modules/professionals/ProfessionalsPage";
 
 export function App() {
   return (
@@ -15,9 +16,12 @@ export function App() {
         <Route element={<AppLayout />}>
           <Route index element={<HomePage />} />
           <Route path="/clientes" element={<CustomersPage />} />
+          <Route path="/profissionais" element={<ProfessionalsPage />} />
           {navigation
             .slice(1)
-            .filter((item) => item.path !== "/clientes")
+            .filter(
+              (item) => !["/clientes", "/profissionais"].includes(item.path),
+            )
             .map((item) => (
               <Route
                 key={item.path}

@@ -521,3 +521,13 @@ button:disabled {
   text-decoration: underline;
   text-underline-offset: 3px;
 }
+
+.button.button-secondary {
+  border: 1px solid #cdd4c9;
+  background: transparent;
+  color: #344e3b;
+}
+
+.button.button-secondary:hover {
+  background: #e8eddf;
+}
