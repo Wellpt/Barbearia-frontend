@@ -14,12 +14,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [restoreError, setRestoreError] = useState<string | null>(null);
   const [notice, setNotice] = useState<string | null>(null);
 
-  function clearSession(message: string | null = null) {
+  const clearSession = useCallback((message: string | null = null) => {
     sessionStorage.removeItem(SESSION_KEY);
     setSession(null);
     setRestoreError(null);
     setNotice(message);
-  }
+  }, []);
 
   const restoreSession = useCallback(async (signal?: AbortSignal) => {
     setIsRestoring(true);
@@ -72,22 +72,35 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     clearSession();
   }
 
-  async function request<T>(
-    path: string,
-    options: Omit<ApiRequestOptions, "token"> = {},
-  ) {
-    try {
-      return await apiRequest<T>(path, {
-        ...options,
-        token: session?.accessToken,
-      });
-    } catch (error) {
-      if (error instanceof ApiError && error.status === 401) {
-        clearSession("Sua sessão expirou. Entre novamente.");
+  const request = useCallback(
+    async function request<T>(
+      path: string,
+      options: Omit<ApiRequestOptions, "token"> = {},
+    ) {
+      try {
+        return await apiRequest<T>(path, {
+          ...options,
+          token: session?.accessToken,
+        });
+      } catch (error) {
+        if (error instanceof ApiError && error.status === 401 && session) {
+          // A senha individual também retorna 401; confirme o login antes de sair.
+          try {
+            await authApi.me(session.accessToken);
+          } catch (sessionError) {
+            if (
+              sessionError instanceof ApiError &&
+              sessionError.status === 401
+            ) {
+              clearSession("Sua sessão expirou. Entre novamente.");
+            }
+          }
+        }
+        throw error;
       }
-      throw error;
-    }
-  }
+    },
+    [session, clearSession],
+  );
 
   return (
     <AuthContext.Provider value={{ session, notice, login, logout, request }}>
