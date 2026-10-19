@@ -1,6 +1,7 @@
-import { NavLink, Outlet, useLocation } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import { navigation } from "./navigation";
 import { SessionControls } from "../modules/auth/SessionControls";
+import { AppSidebar } from "./AppSidebar";
 
 export function AppLayout() {
   const { pathname } = useLocation();
@@ -18,38 +19,7 @@ export function AppLayout() {
       >
         Pular para o conteúdo
       </a>
-      <aside className="sidebar">
-        <NavLink className="brand" to="/" aria-label="Barbearia, início">
-          <span className="brand-mark" aria-hidden="true">
-            B.
-          </span>
-          <span>
-            Barbearia<small>Gestão do dia a dia</small>
-          </span>
-        </NavLink>
-        <p className="nav-caption">SUA BARBEARIA</p>
-        <nav aria-label="Navegação principal">
-          {navigation.map((item, index) => (
-            <NavLink
-              key={item.path}
-              to={item.path}
-              end={item.path === "/"}
-              className={({ isActive }) =>
-                `nav-link${isActive ? " active" : ""}`
-              }
-            >
-              <span className="nav-number" aria-hidden="true">
-                0{index + 1}
-              </span>
-              {item.label}
-            </NavLink>
-          ))}
-        </nav>
-        <div className="sidebar-note">
-          Mais tempo para fazer
-          <br />o que você faz bem.
-        </div>
-      </aside>
+      <AppSidebar />
       <div className="workspace">
         <header className="topbar">
           <span>PAINEL DE GESTÃO</span>
