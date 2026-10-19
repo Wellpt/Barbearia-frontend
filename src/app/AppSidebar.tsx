@@ -1,6 +1,7 @@
 import { useRef, useState, type KeyboardEvent } from "react";
 import { NavLink } from "react-router-dom";
 import { navigation } from "./navigation";
+import { BrandMark } from "../components/BrandMark";
 
 export function AppSidebar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,14 +24,12 @@ export function AppSidebar() {
         <NavLink
           className="brand"
           to="/"
-          aria-label="Barbearia, início"
+          aria-label="Barbearia Peçanha, início"
           onClick={closeMenu}
         >
-          <span className="brand-mark" aria-hidden="true">
-            B.
-          </span>
+          <BrandMark />
           <span>
-            Barbearia<small>Gestão do dia a dia</small>
+            Barbearia Peçanha<small>Gestão do dia a dia</small>
           </span>
         </NavLink>
         <button

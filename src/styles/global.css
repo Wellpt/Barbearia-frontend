@@ -63,15 +63,12 @@ main:focus {
   letter-spacing: -0.6px;
 }
 .brand-mark {
-  display: grid;
-  place-items: center;
-  background: #ded6b9;
-  color: #26352e;
+  display: block;
   width: 40px;
-  height: 42px;
+  height: 40px;
+  flex-shrink: 0;
   border-radius: 9px;
-  font-family: Georgia, serif;
-  font-size: 28px;
+  object-fit: contain;
 }
 .brand small {
   display: block;
@@ -80,6 +77,9 @@ main:focus {
   font-weight: 400;
   color: #b5bfb5;
   margin-top: 6px;
+}
+.sidebar .brand > span {
+  text-align: center;
 }
 .sidebar-heading {
   display: flex;
@@ -211,11 +211,11 @@ h1 {
   margin-top: 16px;
 }
 .welcome-monogram {
-  font-family: Georgia, serif;
-  font-size: 156px;
-  line-height: 1;
-  color: #bdc9ac;
-  padding-left: 22px;
+  width: 112px;
+  height: 112px;
+  flex-shrink: 0;
+  object-fit: contain;
+  border-radius: 14px;
 }
 .button {
   display: inline-flex;
@@ -360,6 +360,24 @@ footer {
 .skip-link:focus {
   transform: none;
 }
+@media (min-width: 721px) {
+  .sidebar .brand {
+    width: 100%;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 18px;
+  }
+
+  .sidebar .brand-mark {
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+  }
+
+  .sidebar .nav-caption {
+    margin-top: 18px;
+  }
+}
 @media (max-width: 1000px) {
   .app-shell {
     grid-template-columns: 200px minmax(0, 1fr);
@@ -372,7 +390,8 @@ footer {
     padding-inline: 20px;
   }
   .welcome-monogram {
-    font-size: 110px;
+    width: 96px;
+    height: 96px;
   }
   .welcome-panel {
     padding: 20px;

@@ -1,6 +1,7 @@
 import { useState, type FormEvent } from "react";
 import { Navigate, useLocation } from "react-router-dom";
 import { useAuth } from "./auth-context";
+import { BrandMark } from "../../components/BrandMark";
 
 export function LoginPage() {
   const { session, notice, login } = useAuth();
@@ -35,11 +36,9 @@ export function LoginPage() {
     <div className="login-layout">
       <aside className="login-intro">
         <div className="brand">
-          <span className="brand-mark" aria-hidden="true">
-            B.
-          </span>
+          <BrandMark />
           <span>
-            Barbearia<small>Gestão do dia a dia</small>
+            Barbearia Peçanha<small>Gestão do dia a dia</small>
           </span>
         </div>
         <div className="login-intro-copy">
@@ -62,7 +61,7 @@ export function LoginPage() {
       <main className="login-content">
         <section className="login-form-container" aria-labelledby="login-title">
           <p className="eyebrow">BEM-VINDO DE VOLTA</p>
-          <h1 id="login-title">Entre na sua barbearia</h1>
+          <h1 id="login-title">Entre na Barbearia Peçanha</h1>
           <p className="login-description">
             Use o e-mail e a senha da conta de operação.
           </p>

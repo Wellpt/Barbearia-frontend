@@ -1,3 +1,5 @@
+import { BrandMark } from "../../components/BrandMark";
+
 interface SessionScreenProps {
   error?: string | null;
   onRetry?: () => void;
@@ -8,9 +10,7 @@ export function SessionScreen({ error, onRetry, onReset }: SessionScreenProps) {
   return (
     <div className="session-screen">
       <section className="panel session-panel" aria-busy={!error}>
-        <span className="brand-mark" aria-hidden="true">
-          B.
-        </span>
+        <BrandMark />
         <h1>
           {error
             ? "Não foi possível verificar sua sessão"

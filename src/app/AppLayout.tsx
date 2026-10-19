@@ -37,7 +37,9 @@ export function AppLayout() {
           </div>
           <Outlet />
         </main>
-        <footer>Barbearia · Gestão simples, cuidado em cada detalhe.</footer>
+        <footer>
+          Barbearia Peçanha · Gestão simples, cuidado em cada detalhe.
+        </footer>
       </div>
     </div>
   );
