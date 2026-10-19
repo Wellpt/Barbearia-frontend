@@ -1,0 +1,284 @@
+.balances-page,
+.professional-balance-panel,
+.balance-details,
+.balance-summary {
+  display: grid;
+  gap: 22px;
+}
+
+.balances-toolbar,
+.balance-professional-heading,
+.balance-professional-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.balances-toolbar > p,
+.balance-privacy-note,
+.balance-sharing-note {
+  font-size: 13px;
+  color: #68736b;
+}
+
+.balances-toolbar > button,
+.balance-professional-actions > button {
+  flex-shrink: 0;
+}
+
+.balance-professionals-grid,
+.balance-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.balance-professional-card {
+  padding: 28px;
+}
+
+.balance-professional-card h2,
+.balance-professional-heading h2 {
+  font-size: 22px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.balance-inactive-note,
+.balance-professional-heading > div > p:not(.eyebrow) {
+  font-size: 12px;
+  color: #68736b;
+}
+
+.balance-hidden-value {
+  font-size: 34px;
+  letter-spacing: 5px;
+  color: #8a957f;
+  margin-top: 26px;
+  line-height: 1;
+}
+
+.balance-hidden-label {
+  font-size: 12px;
+  color: #68736b;
+  margin: 10px 0 24px;
+}
+
+.balance-professional-heading .eyebrow,
+.balance-password-panel .eyebrow {
+  color: #68775c;
+  margin-bottom: 6px;
+}
+
+.balance-password-panel {
+  padding: 28px;
+  width: 100%;
+  max-width: 620px;
+}
+
+.balance-password-panel h2,
+.balance-summary-heading h2 {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.4px;
+}
+
+.balance-password-description {
+  font-size: 13px;
+  color: #68736b;
+  margin: 12px 0 24px;
+}
+
+.balance-password-form {
+  display: grid;
+  gap: 18px;
+}
+
+.balance-password-control {
+  position: relative;
+}
+
+.form-field .balance-password-control input {
+  padding-right: 52px;
+}
+
+.balance-password-toggle {
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border: 0;
+  border-radius: 5px;
+  background: transparent;
+  color: #526447;
+  cursor: pointer;
+}
+
+.balance-password-toggle:hover {
+  background: #e8eddf;
+}
+
+.balance-password-help {
+  font-size: 12px;
+  color: #68736b;
+}
+
+.balance-password-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  margin-top: 18px;
+  font-size: 12px;
+}
+
+.balances-notice {
+  padding: 12px 16px;
+  background: #e8eddf;
+  border: 1px solid #cdd9c4;
+  border-radius: 6px;
+  color: #48583e;
+  font-size: 13px;
+}
+
+.balance-filters {
+  padding: 24px;
+}
+
+.balance-filters fieldset {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto;
+  gap: 18px;
+  align-items: end;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  min-width: 0;
+}
+
+.balance-filters button {
+  min-height: 50px;
+}
+
+.balance-filters > p,
+.balance-summary-heading p {
+  font-size: 12px;
+  color: #68736b;
+  margin-top: 12px;
+}
+
+.balance-loading {
+  font-size: 13px;
+  color: #68736b;
+  padding: 20px 0;
+}
+
+.balance-metrics {
+  margin: 0;
+}
+
+.balance-metric {
+  padding: 25px;
+}
+
+.balance-metric dt {
+  font-size: 13px;
+  font-weight: 500;
+  color: #526447;
+}
+
+.balance-metric dd {
+  margin: 14px 0 0;
+  font-size: clamp(24px, 2.6vw, 32px);
+  font-weight: 600;
+  letter-spacing: -0.6px;
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+
+.balance-metric small {
+  display: block;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: normal;
+  color: #68736b;
+  margin-top: 8px;
+}
+
+.balance-metric-total {
+  background: #dfe6d5;
+  border-color: #cbd6bd;
+}
+
+.balance-metric-total dd {
+  color: #263b30;
+}
+
+.balance-pending {
+  padding: 24px;
+}
+
+.balance-pending > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.balance-pending h3 {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.balance-pending strong {
+  font-size: 22px;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.balance-pending p {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #68736b;
+}
+
+@media (max-width: 760px) {
+  .balances-toolbar,
+  .balance-professional-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .balance-filters fieldset {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .balance-filters button {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 520px) {
+  .balance-professionals-grid,
+  .balance-metrics,
+  .balance-filters fieldset {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .balance-professional-card,
+  .balance-password-panel,
+  .balance-filters,
+  .balance-metric,
+  .balance-pending {
+    padding: 20px;
+  }
+
+  .balance-professional-actions,
+  .balance-pending > div {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

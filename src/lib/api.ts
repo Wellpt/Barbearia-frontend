@@ -16,13 +16,15 @@ export interface ApiRequestOptions {
   body?: unknown;
   token?: string;
   signal?: AbortSignal;
+  headers?: HeadersInit;
 }
 
 export async function apiRequest<T>(
   path: string,
   options: ApiRequestOptions = {},
 ): Promise<T> {
-  const headers = new Headers({ Accept: "application/json" });
+  const headers = new Headers(options.headers);
+  headers.set("Accept", "application/json");
   if (options.body !== undefined)
     headers.set("Content-Type", "application/json");
   if (options.token) headers.set("Authorization", `Bearer ${options.token}`);
