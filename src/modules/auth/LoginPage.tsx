@@ -1,7 +1,7 @@
 import { useState, type FormEvent } from "react";
 import { Navigate, useLocation } from "react-router-dom";
-import { ApiError } from "../../lib/api";
 import { useAuth } from "./auth-context";
+import { BrandMark } from "../../components/BrandMark";
 
 export function LoginPage() {
   const { session, notice, login } = useAuth();
@@ -11,7 +11,6 @@ export function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [requestId, setRequestId] = useState<string | undefined>();
   const destination = (location.state as { from?: string } | null)?.from ?? "/";
 
   if (session) return <Navigate to={destination} replace />;
@@ -20,7 +19,6 @@ export function LoginPage() {
     event.preventDefault();
     setIsSubmitting(true);
     setError(null);
-    setRequestId(undefined);
     try {
       await login({ email, password });
     } catch (failure) {
@@ -29,7 +27,6 @@ export function LoginPage() {
           ? failure.message
           : "Não foi possível entrar. Tente novamente.",
       );
-      if (failure instanceof ApiError) setRequestId(failure.requestId);
     } finally {
       setIsSubmitting(false);
     }
@@ -39,11 +36,9 @@ export function LoginPage() {
     <div className="login-layout">
       <aside className="login-intro">
         <div className="brand">
-          <span className="brand-mark" aria-hidden="true">
-            B.
-          </span>
+          <BrandMark />
           <span>
-            Barbearia<small>Gestão do dia a dia</small>
+            Barbearia Peçanha<small>Gestão do dia a dia</small>
           </span>
         </div>
         <div className="login-intro-copy">
@@ -66,7 +61,7 @@ export function LoginPage() {
       <main className="login-content">
         <section className="login-form-container" aria-labelledby="login-title">
           <p className="eyebrow">BEM-VINDO DE VOLTA</p>
-          <h1 id="login-title">Entre na sua barbearia</h1>
+          <h1 id="login-title">Entre na Barbearia Peçanha</h1>
           <p className="login-description">
             Use o e-mail e a senha da conta de operação.
           </p>
@@ -135,7 +130,6 @@ export function LoginPage() {
             {error && (
               <div className="auth-error" role="alert">
                 <p>{error}</p>
-                {requestId && <small>Referência: {requestId}</small>}
               </div>
             )}
             <button

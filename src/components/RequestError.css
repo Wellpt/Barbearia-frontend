@@ -6,9 +6,3 @@
   color: #8a3527;
   font-size: 13px;
 }
-.request-error small {
-  display: block;
-  margin-top: 6px;
-  overflow-wrap: anywhere;
-  font-size: 10px;
-}

@@ -1,27 +1,168 @@
-.attendances-page { display: grid; gap: 22px; }
-.attendances-toolbar { display: flex; justify-content: space-between; align-items: center; gap: 18px; }
-.attendances-toolbar > p { color: #68736b; font-size: 13px; }
-.attendances-toolbar > button { font-size: 12px; flex-shrink: 0; }
-.attendance-loading { padding: 22px; text-align: center; color: #68736b; font-size: 13px; }
-.attendance-form-panel { padding: 28px; }
-.attendance-form-panel > .eyebrow { color: #68775c; margin-bottom: 6px; }
-.attendance-form-panel h2 { font-size: 23px; font-weight: 600; letter-spacing: -.5px; }
-.attendance-form-description { color: #68736b; font-size: 13px; margin: 10px 0 25px; }
-.attendance-form { display: grid; gap: 22px; }
-.attendance-form fieldset { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 22px; border: 0; padding: 0; margin: 0; min-width: 0; }
-.attendance-customer-field { grid-column: 1 / -1; }
-.attendance-form-actions { display: flex; justify-content: space-between; align-items: center; gap: 20px; border-top: 1px solid #eeeee7; padding-top: 22px; }
-.attendance-form-actions > p { font-size: 12px; color: #788076; }
-.attendance-form-actions > button { flex-shrink: 0; }
-.attendance-prerequisites { padding: 16px 20px; border: 1px solid #dcd7bf; background: #f5f1df; color: #746331; border-radius: 7px; font-size: 13px; margin-bottom: 25px; }
-.attendance-prerequisites ul { margin: 8px 0 0; padding-left: 20px; }
-.attendance-prerequisites a { text-decoration: underline; text-underline-offset: 3px; }
-.attendance-confirmation { padding: 24px 28px; border: 1px solid #cdd9c4; background: #e8eddf; border-radius: 10px; }
-.attendance-confirmation-heading { display: flex; justify-content: space-between; align-items: center; gap: 18px; }
-.attendance-confirmation .eyebrow { color: #68775c; margin-bottom: 6px; }
-.attendance-confirmation h2 { font-size: 19px; font-weight: 600; letter-spacing: -.3px; }
-.attendance-confirmation-heading > strong { color: #344e3b; font-size: 26px; font-weight: 550; white-space: nowrap; }
-.attendance-confirmation dl { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 16px; margin: 22px 0 0; }
-.attendance-confirmation dt { font-size: 11px; color: #68736b; }
-.attendance-confirmation dd { margin: 4px 0 0; font-size: 13px; overflow-wrap: anywhere; }
-@media (max-width: 640px) { .attendances-toolbar { align-items: flex-start; flex-direction: column; gap: 8px; } .attendance-form-panel, .attendance-confirmation { padding: 22px; } .attendance-form fieldset { grid-template-columns: 1fr; } .attendance-form-actions { align-items: stretch; flex-direction: column; gap: 14px; } .attendance-confirmation-heading { align-items: flex-start; flex-direction: column; gap: 12px; } .attendance-confirmation dl { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+.attendances-page {
+  display: grid;
+  gap: 16px;
+}
+.attendances-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+}
+.attendances-toolbar > p {
+  color: #68736b;
+  font-size: 13px;
+}
+.attendances-toolbar > button {
+  font-size: 12px;
+  flex-shrink: 0;
+}
+.attendance-loading {
+  padding: 16px;
+  text-align: center;
+  color: #68736b;
+  font-size: 13px;
+}
+.attendance-form-panel {
+  padding: 18px;
+}
+.attendance-form-panel > .eyebrow {
+  color: #68775c;
+  margin-bottom: 6px;
+}
+.attendance-form-panel h2 {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+.attendance-form-description {
+  color: #68736b;
+  font-size: 13px;
+  margin: 8px 0 16px;
+}
+.attendance-form {
+  display: grid;
+  gap: 16px;
+}
+.attendance-form fieldset {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
+.attendance-customer-field {
+  grid-column: 1 / -1;
+}
+.attendance-form-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  border-top: 1px solid #eeeee7;
+  padding-top: 16px;
+}
+.attendance-form-actions > p {
+  font-size: 12px;
+  color: #788076;
+}
+.attendance-form-actions > button {
+  flex-shrink: 0;
+}
+.attendance-prerequisites {
+  padding: 16px 20px;
+  border: 1px solid #dcd7bf;
+  background: #f5f1df;
+  color: #746331;
+  border-radius: 7px;
+  font-size: 13px;
+  margin-bottom: 16px;
+}
+.attendance-prerequisites ul {
+  margin: 8px 0 0;
+  padding-left: 20px;
+}
+.attendance-prerequisites a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.attendance-confirmation {
+  padding: 16px 18px;
+  border: 1px solid #cdd9c4;
+  background: #e8eddf;
+  border-radius: 10px;
+}
+.attendance-confirmation-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+}
+.attendance-confirmation .eyebrow {
+  color: #68775c;
+  margin-bottom: 6px;
+}
+.attendance-confirmation h2 {
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+}
+.attendance-confirmation-heading > strong {
+  color: #344e3b;
+  font-size: 22px;
+  font-weight: 550;
+  white-space: nowrap;
+}
+.attendance-confirmation dl {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin: 14px 0 0;
+}
+.attendance-confirmation dt {
+  font-size: 11px;
+  color: #68736b;
+}
+.attendance-confirmation dd {
+  margin: 4px 0 0;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 640px) {
+  .attendances-toolbar {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .attendance-form-panel,
+  .attendance-confirmation {
+    padding: 16px;
+  }
+  .attendance-form fieldset {
+    grid-template-columns: 1fr;
+  }
+  .attendance-form-actions {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .attendance-confirmation-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .attendance-confirmation dl {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1100px) {
+  .attendance-form fieldset {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .attendance-customer-field {
+    grid-column: span 2;
+  }
+}

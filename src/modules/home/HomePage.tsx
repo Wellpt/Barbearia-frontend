@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import { BrandMark } from "../../components/BrandMark";
+import "./home.css";
 
 const shortcuts = [
   {
@@ -39,9 +41,7 @@ export function HomePage() {
             Ir para atendimentos <span aria-hidden="true">↗</span>
           </Link>
         </div>
-        <span className="welcome-monogram" aria-hidden="true">
-          B.
-        </span>
+        <BrandMark className="welcome-monogram" />
       </section>
       <div className="section-heading">
         <h2>Seu dia a dia</h2>
@@ -62,7 +62,8 @@ export function HomePage() {
       <section className="release-note" aria-label="Dica de uso">
         <span className="status-dot" aria-hidden="true" />
         <p>
-          <strong>Dica para sua rotina.</strong> Cadastre o cliente e selecione o profissional responsável antes de lançar cada corte.
+          <strong>Dica para sua rotina.</strong> Cadastre o cliente e selecione
+          o profissional responsável antes de lançar cada corte.
         </p>
       </section>
     </>

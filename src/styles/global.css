@@ -11,7 +11,7 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
-  line-height: 1.6;
+  line-height: 1.45;
 }
 * {
   box-sizing: border-box;
@@ -43,13 +43,13 @@ main:focus {
 }
 .app-shell {
   display: grid;
-  grid-template-columns: 248px minmax(0, 1fr);
+  grid-template-columns: 216px minmax(0, 1fr);
   min-height: 100dvh;
 }
 .sidebar {
   background: #202c29;
   color: #eeeae1;
-  padding: 36px 22px;
+  padding: 24px 16px;
   display: flex;
   flex-direction: column;
 }
@@ -57,21 +57,18 @@ main:focus {
   display: flex;
   gap: 12px;
   align-items: center;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 650;
   line-height: 1.2;
   letter-spacing: -0.6px;
 }
 .brand-mark {
-  display: grid;
-  place-items: center;
-  background: #ded6b9;
-  color: #26352e;
-  width: 45px;
-  height: 48px;
+  display: block;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
   border-radius: 9px;
-  font-family: Georgia, serif;
-  font-size: 32px;
+  object-fit: contain;
 }
 .brand small {
   display: block;
@@ -81,22 +78,34 @@ main:focus {
   color: #b5bfb5;
   margin-top: 6px;
 }
+.sidebar .brand > span {
+  text-align: center;
+}
+.sidebar-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.mobile-menu-toggle {
+  display: none;
+}
 .nav-caption {
   font-size: 10px;
   letter-spacing: 2px;
   color: #a9b6ac;
-  margin: 54px 14px 16px;
+  margin: 28px 10px 10px;
 }
 .sidebar nav {
   display: grid;
-  gap: 7px;
+  gap: 5px;
 }
 .nav-link {
-  padding: 12px 14px;
+  padding: 10px 12px;
   border-radius: 7px;
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 12px;
   font-size: 14px;
   color: #d0d7cf;
   transition: background 0.15s;
@@ -115,11 +124,11 @@ main:focus {
   font-variant-numeric: tabular-nums;
 }
 .sidebar-note {
-  margin: auto 14px 0;
-  padding-top: 64px;
+  margin: auto 10px 0;
+  padding-top: 24px;
   font-family: Georgia, serif;
-  font-size: 19px;
-  line-height: 1.6;
+  font-size: 16px;
+  line-height: 1.45;
   color: #c1cbbd;
 }
 .workspace {
@@ -131,7 +140,7 @@ main:focus {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 44px;
+  padding: 10px 28px;
   border-bottom: 1px solid #e4e4db;
   font-size: 10px;
   letter-spacing: 1.6px;
@@ -145,7 +154,7 @@ main:focus {
   letter-spacing: 0.3px;
 }
 main {
-  padding: 34px 44px 48px;
+  padding: 20px 28px 24px;
   width: 100%;
   max-width: 1320px;
   margin-inline: auto;
@@ -157,14 +166,14 @@ main {
   font-weight: 650;
 }
 .page-heading {
-  margin-bottom: 29px;
+  margin-bottom: 18px;
 }
 .page-heading .eyebrow {
   color: #68775c;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
 }
 h1 {
-  font-size: 32px;
+  font-size: 28px;
   letter-spacing: -1px;
   font-weight: 600;
   line-height: 1.25;
@@ -172,7 +181,7 @@ h1 {
 .page-description {
   font-size: 14px;
   color: #68736b;
-  margin-top: 10px;
+  margin-top: 6px;
 }
 .welcome-panel {
   background: #dfe6d5;
@@ -202,20 +211,20 @@ h1 {
   margin-top: 16px;
 }
 .welcome-monogram {
-  font-family: Georgia, serif;
-  font-size: 156px;
-  line-height: 1;
-  color: #bdc9ac;
-  padding-left: 22px;
+  width: 112px;
+  height: 112px;
+  flex-shrink: 0;
+  object-fit: contain;
+  border-radius: 14px;
 }
 .button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 22px;
+  gap: 14px;
   background: #263b30;
   color: #fff;
-  padding: 11px 18px;
+  padding: 9px 14px;
   border-radius: 6px;
   font-size: 12px;
   font-weight: 550;
@@ -304,14 +313,14 @@ h1 {
   flex-shrink: 0;
 }
 .empty-state {
-  padding: 55px 24px;
+  padding: 32px 20px;
   text-align: center;
 }
 .empty-mark {
   display: inline-grid;
   place-items: center;
   width: 50px;
-  height: 50px;
+  height: 44px;
   border-radius: 50%;
   background: #e8eddf;
   color: #4f6844;
@@ -328,12 +337,12 @@ h1 {
 }
 .empty-state > p:not(.eyebrow) {
   max-width: 420px;
-  margin: 12px auto 25px;
+  margin: 10px auto 18px;
   color: #6d7769;
   font-size: 14px;
 }
 footer {
-  padding: 18px 44px;
+  padding: 10px 28px;
   border-top: 1px solid #e3e4da;
   font-size: 10px;
   color: #7d8579;
@@ -351,22 +360,41 @@ footer {
 .skip-link:focus {
   transform: none;
 }
+@media (min-width: 721px) {
+  .sidebar .brand {
+    width: 100%;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 18px;
+  }
+
+  .sidebar .brand-mark {
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+  }
+
+  .sidebar .nav-caption {
+    margin-top: 18px;
+  }
+}
 @media (max-width: 1000px) {
   .app-shell {
-    grid-template-columns: 210px minmax(0, 1fr);
+    grid-template-columns: 200px minmax(0, 1fr);
   }
   main {
-    padding: 28px;
+    padding: 20px;
   }
   .topbar,
   footer {
-    padding-inline: 28px;
+    padding-inline: 20px;
   }
   .welcome-monogram {
-    font-size: 110px;
+    width: 96px;
+    height: 96px;
   }
   .welcome-panel {
-    padding: 28px;
+    padding: 20px;
   }
   .shortcut-grid {
     gap: 10px;
@@ -380,7 +408,7 @@ footer {
     display: block;
   }
   .sidebar {
-    padding: 18px 20px;
+    padding: 14px 16px;
   }
   .brand {
     font-size: 20px;
@@ -393,26 +421,46 @@ footer {
   .sidebar-note {
     display: none;
   }
+  .mobile-menu-toggle {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    border: 1px solid #526258;
+    border-radius: 6px;
+    background: transparent;
+    color: #eeeae1;
+    cursor: pointer;
+    padding: 0;
+  }
+  .mobile-menu-toggle:hover {
+    background: #2d3b34;
+  }
   .sidebar nav {
-    display: flex;
-    overflow-x: auto;
-    gap: 6px;
-    margin-top: 20px;
-    padding-bottom: 4px;
+    display: none;
+    gap: 4px;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid #3c4d42;
+  }
+  .sidebar nav.mobile-menu-open {
+    display: grid;
   }
   .nav-link {
-    white-space: nowrap;
-    font-size: 12px;
-    padding: 9px 12px;
+    white-space: normal;
+    font-size: 14px;
+    min-height: 44px;
+    padding: 10px 12px;
   }
   .nav-number {
     display: none;
   }
   .topbar {
-    padding: 14px 20px;
+    padding: 8px 16px;
   }
   main {
-    padding: 25px 20px 32px;
+    padding: 18px 16px 22px;
   }
   h1 {
     font-size: 28px;
@@ -424,7 +472,7 @@ footer {
     display: none;
   }
   .welcome-panel h2 {
-    font-size: 32px;
+    font-size: 28px;
   }
   .shortcut-grid {
     grid-template-columns: 1fr;
@@ -449,7 +497,7 @@ footer {
     margin-top: 5px;
   }
   footer {
-    padding: 16px 20px;
+    padding: 10px 16px;
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -460,7 +508,7 @@ footer {
 
 .form-field {
   display: grid;
-  gap: 8px;
+  gap: 6px;
 }
 
 .form-field label {
@@ -471,13 +519,13 @@ footer {
 .form-field input,
 .form-field select {
   width: 100%;
-  height: 50px;
+  height: 44px;
   min-width: 0;
   border: 1px solid #cdd4c9;
   background: #fffefa;
   border-radius: 6px;
-  padding: 12px 14px;
-  font-size: 15px;
+  padding: 10px 12px;
+  font-size: 14px;
   color: #25312d;
 }
 
