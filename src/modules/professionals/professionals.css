@@ -1,12 +1,12 @@
 .professionals-page {
   display: grid;
-  gap: 22px;
+  gap: 16px;
 }
 .professionals-toolbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 18px;
+  gap: 14px;
 }
 .professionals-toolbar > p {
   font-size: 13px;
@@ -16,7 +16,7 @@
   flex-shrink: 0;
 }
 .professional-form-panel {
-  padding: 26px;
+  padding: 18px;
 }
 .professional-form-panel > .eyebrow {
   color: #68775c;
@@ -24,18 +24,18 @@
 }
 .professional-form-panel h2,
 .professionals-list-heading h2 {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
   letter-spacing: -0.4px;
 }
 .professional-form-description {
-  margin: 10px 0 22px;
+  margin: 8px 0 16px;
   font-size: 13px;
   color: #68736b;
 }
 .professional-form {
   display: grid;
-  gap: 20px;
+  gap: 14px;
 }
 .professional-form-actions {
   display: flex;
@@ -57,8 +57,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 18px;
-  padding: 24px 26px;
+  gap: 14px;
+  padding: 14px 18px;
   border-bottom: 1px solid #e4e4db;
 }
 .professionals-list-heading p {
@@ -79,7 +79,7 @@
 }
 .professionals-table th,
 .professionals-table td {
-  padding: 16px 26px;
+  padding: 10px 18px;
   border-bottom: 1px solid #eeeee7;
   font-size: 13px;
 }
@@ -119,7 +119,7 @@
   font-size: 12px;
 }
 .professionals-empty {
-  padding: 44px 26px;
+  padding: 28px 18px;
   text-align: center;
   color: #68736b;
   font-size: 13px;
@@ -131,11 +131,11 @@
   margin-bottom: 10px;
 }
 .professionals-load-error {
-  padding: 24px 26px;
+  padding: 14px 18px;
 }
 .professionals-history-note {
   border-top: 1px solid #e4e4db;
-  padding: 15px 26px;
+  padding: 10px 18px;
   color: #68736b;
   background: #f7f8f2;
   font-size: 11px;
@@ -147,7 +147,7 @@
   }
   .professional-form-panel,
   .professionals-list-heading {
-    padding: 20px;
+    padding: 16px;
   }
   .professional-form-actions {
     flex-wrap: wrap;
@@ -157,9 +157,9 @@
   }
   .professionals-table th,
   .professionals-table td {
-    padding-inline: 18px;
+    padding-inline: 16px;
   }
   .professionals-history-note {
-    padding-inline: 20px;
+    padding-inline: 16px;
   }
 }

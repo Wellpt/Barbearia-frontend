@@ -3,7 +3,7 @@
 .balance-details,
 .balance-summary {
   display: grid;
-  gap: 22px;
+  gap: 16px;
 }
 
 .balances-toolbar,
@@ -12,7 +12,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 18px;
+  gap: 14px;
 }
 
 .balances-toolbar > p,
@@ -31,16 +31,16 @@
 .balance-metrics {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
+  gap: 14px;
 }
 
 .balance-professional-card {
-  padding: 28px;
+  padding: 18px;
 }
 
 .balance-professional-card h2,
 .balance-professional-heading h2 {
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 600;
   overflow-wrap: anywhere;
 }
@@ -52,17 +52,17 @@
 }
 
 .balance-hidden-value {
-  font-size: 34px;
+  font-size: 28px;
   letter-spacing: 5px;
   color: #8a957f;
-  margin-top: 26px;
+  margin-top: 16px;
   line-height: 1;
 }
 
 .balance-hidden-label {
   font-size: 12px;
   color: #68736b;
-  margin: 10px 0 24px;
+  margin: 8px 0 16px;
 }
 
 .balance-professional-heading .eyebrow,
@@ -72,14 +72,14 @@
 }
 
 .balance-password-panel {
-  padding: 28px;
+  padding: 18px;
   width: 100%;
   max-width: 620px;
 }
 
 .balance-password-panel h2,
 .balance-summary-heading h2 {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
   letter-spacing: -0.4px;
 }
@@ -87,12 +87,12 @@
 .balance-password-description {
   font-size: 13px;
   color: #68736b;
-  margin: 12px 0 24px;
+  margin: 10px 0 16px;
 }
 
 .balance-password-form {
   display: grid;
-  gap: 18px;
+  gap: 14px;
 }
 
 .balance-password-control {
@@ -109,8 +109,8 @@
   top: 4px;
   display: grid;
   place-items: center;
-  width: 42px;
-  height: 42px;
+  width: 36px;
+  height: 36px;
   border: 0;
   border-radius: 5px;
   background: transparent;
@@ -131,7 +131,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 12px 24px;
-  margin-top: 18px;
+  margin-top: 14px;
   font-size: 12px;
 }
 
@@ -145,13 +145,13 @@
 }
 
 .balance-filters {
-  padding: 24px;
+  padding: 16px 18px;
 }
 
 .balance-filters fieldset {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto;
-  gap: 18px;
+  gap: 14px;
   align-items: end;
   padding: 0;
   margin: 0;
@@ -160,7 +160,7 @@
 }
 
 .balance-filters button {
-  min-height: 50px;
+  min-height: 44px;
 }
 
 .balance-filters > p,
@@ -181,7 +181,7 @@
 }
 
 .balance-metric {
-  padding: 25px;
+  padding: 18px;
 }
 
 .balance-metric dt {
@@ -191,8 +191,8 @@
 }
 
 .balance-metric dd {
-  margin: 14px 0 0;
-  font-size: clamp(24px, 2.6vw, 32px);
+  margin: 10px 0 0;
+  font-size: clamp(22px, 2.2vw, 28px);
   font-weight: 600;
   letter-spacing: -0.6px;
   font-variant-numeric: tabular-nums;
@@ -217,15 +217,19 @@
   color: #263b30;
 }
 
+.balance-metric-total .balance-negative {
+  color: #b42318;
+}
+
 .balance-pending {
-  padding: 24px;
+  padding: 16px 18px;
 }
 
 .balance-pending > div {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 18px;
+  gap: 14px;
 }
 
 .balance-pending h3 {
@@ -234,7 +238,7 @@
 }
 
 .balance-pending strong {
-  font-size: 22px;
+  font-size: 18px;
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
 }
@@ -273,12 +277,18 @@
   .balance-filters,
   .balance-metric,
   .balance-pending {
-    padding: 20px;
+    padding: 16px;
   }
 
   .balance-professional-actions,
   .balance-pending > div {
     align-items: flex-start;
     flex-direction: column;
+  }
+}
+
+@media (min-width: 1200px) {
+  .balance-metrics {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }

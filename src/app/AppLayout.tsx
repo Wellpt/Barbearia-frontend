@@ -55,7 +55,11 @@ export function AppLayout() {
           <span>PAINEL DE GESTÃO</span>
           <SessionControls />
         </header>
-        <main id="main-content" tabIndex={-1}>
+        <main
+          id="main-content"
+          className={pathname === "/" ? "home-main" : undefined}
+          tabIndex={-1}
+        >
           <div className="page-heading">
             <p className="eyebrow">ROTINA ORGANIZADA</p>
             <h1>{current?.label ?? "Página não encontrada"}</h1>

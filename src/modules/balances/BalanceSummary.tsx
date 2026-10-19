@@ -38,7 +38,13 @@ export function BalanceSummary({ balance }: { balance: ProfessionalBalance }) {
         <div className="panel balance-metric balance-metric-total">
           <dt>Saldo após despesas pagas</dt>
           <dd>
-            {formatBalanceAmount(balance.balance)}
+            <span
+              className={
+                Number(balance.balance) < 0 ? "balance-negative" : undefined
+              }
+            >
+              {formatBalanceAmount(balance.balance)}
+            </span>
             <small>Recebimentos menos sua parte nas despesas pagas.</small>
           </dd>
         </div>

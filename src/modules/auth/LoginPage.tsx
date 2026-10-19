@@ -1,6 +1,5 @@
 import { useState, type FormEvent } from "react";
 import { Navigate, useLocation } from "react-router-dom";
-import { ApiError } from "../../lib/api";
 import { useAuth } from "./auth-context";
 
 export function LoginPage() {
@@ -11,7 +10,6 @@ export function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [requestId, setRequestId] = useState<string | undefined>();
   const destination = (location.state as { from?: string } | null)?.from ?? "/";
 
   if (session) return <Navigate to={destination} replace />;
@@ -20,7 +18,6 @@ export function LoginPage() {
     event.preventDefault();
     setIsSubmitting(true);
     setError(null);
-    setRequestId(undefined);
     try {
       await login({ email, password });
     } catch (failure) {
@@ -29,7 +26,6 @@ export function LoginPage() {
           ? failure.message
           : "Não foi possível entrar. Tente novamente.",
       );
-      if (failure instanceof ApiError) setRequestId(failure.requestId);
     } finally {
       setIsSubmitting(false);
     }
@@ -135,7 +131,6 @@ export function LoginPage() {
             {error && (
               <div className="auth-error" role="alert">
                 <p>{error}</p>
-                {requestId && <small>Referência: {requestId}</small>}
               </div>
             )}
             <button

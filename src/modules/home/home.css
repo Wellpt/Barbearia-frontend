@@ -1,0 +1,51 @@
+.home-main .welcome-panel {
+  padding: 18px 22px;
+}
+
+.home-main .welcome-panel h2 {
+  font-size: clamp(22px, 2.2vw, 28px);
+  line-height: 1.15;
+  margin-top: 8px;
+}
+
+.home-main .welcome-panel p:not(.eyebrow) {
+  margin-top: 10px;
+  max-width: 520px;
+}
+
+.home-main .welcome-monogram {
+  font-size: 80px;
+}
+
+.home-main .button-light {
+  margin-top: 16px;
+}
+
+.home-main .section-heading {
+  margin: 20px 0 12px;
+}
+
+.home-main .shortcut-card {
+  padding: 14px 16px;
+}
+
+.home-main .shortcut-card h3 {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.home-main .shortcut-card p {
+  margin-top: 6px;
+  line-height: 1.5;
+}
+
+.home-main .release-note {
+  margin-top: 16px;
+  padding: 10px 14px;
+}
+
+@media (max-width: 720px) {
+  .home-main .welcome-panel {
+    padding: 18px;
+  }
+}
